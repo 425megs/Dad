@@ -1,0 +1,119 @@
+@font-face { font-family: Delicious; src: url('Lobster.otf'); } 
+@font-face { font-family: Delicious; font-weight: bold; src: url('Lobster.otf');}
+
+h1 {
+    font-size: 75px;
+}
+
+body {
+    background-image: url(./background.jpeg)
+}
+
+#picture {
+    max-height: 300px;
+    max-width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;;
+}
+
+.dropbtn {
+    background-color: black;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: whitesmoke;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+@mixin customOrderedList($margin-bottom, $text-shadow, $inner-list-margin) {
+    counter-reset: li;
+    list-style: none;
+    *list-style: decimal;
+    padding: 0;
+    margin-bottom: $margin-bottom;
+    text-shadow: $text-shadow;
+
+
+    @mixin roundedOrderedList(){
+        a {
+          padding: .4em .4em .4em 2em;
+          margin: .5em 0;
+          background: $alto;
+          color: $tundora;
+          border-radius: .3em;
+          transition: all .3s ease-out;
+          &:hover {
+            background: $gallery;
+            &:before {
+              transform: rotate(360deg);
+            }
+          }
+          &:before {
+            left: -1.3em;
+            margin-top: -1.3em;
+            background: $seagull;
+            border: .3em solid white;
+            border-radius: 2em;
+            transition: all .3s ease-out;
+          }
+        }
+      }
+      
+      body {
+        font-family: $font-family-default;
+        font-size: $font-size-small;
+      }
+      
+      .clearfix {
+        &:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+      }
+      
+      .wrapper {
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+      
+      .example {
+        padding: 2em;
+        
+        h2 {
+          border-bottom: 1px solid grey;
+        }
+      }
+      
+      [class*='-list'] {
+        padding: 2em 5vw;
+      }
+      
+      nav {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
